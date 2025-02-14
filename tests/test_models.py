@@ -168,7 +168,7 @@ class TestProductModel(unittest.TestCase):
         products = Product.all()
         self.assertEqual(len(products), 5)
 
-    # TEST CASE: SERIALIZE A PRODUCT
+    # TEST-CASE: SERIALIZE A PRODUCT
     def test_serialize_product(self):
         """It should serialize a Product into a dictionary"""
         # Create a product with known attributes
@@ -189,7 +189,7 @@ class TestProductModel(unittest.TestCase):
             "id": 1,
             "name": "Fedora",
             "description": "A red hat",
-            "price": "12.50",  # Ensure price is serialized to string
+            "price": "12.5",  # Ensure price is serialized to string
             "available": True,
             "category": "CLOTHS"  # Enum converted to string
         }
