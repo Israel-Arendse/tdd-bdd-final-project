@@ -170,7 +170,7 @@ class TestProductModel(unittest.TestCase):
 
     # TEST-CASE: SERIALIZE A PRODUCT
     def test_serialize_product(self):
-        """It should serialize a Product into a dictionary"""
+        """It should Serialize a Product into a dictionary"""
         # Create a product with known attributes
         product = Product(
             id=1,
@@ -200,7 +200,7 @@ class TestProductModel(unittest.TestCase):
 
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
-        """It should find a Product by Name"""
+        """It should Find a Product by Name"""
         products = ProductFactory.create_batch(5)
         for product in products:
             product.create()
@@ -213,7 +213,7 @@ class TestProductModel(unittest.TestCase):
 
     # TEST-CASE: FIND BY AVAILABILITY
     def test_find_by_availability(self):
-        """It should find Products by Availability"""
+        """It should Find Products by Availability"""
         products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
@@ -226,7 +226,7 @@ class TestProductModel(unittest.TestCase):
 
     # TEST CASE: FIND BY CATEGORY
     def test_find_by_category(self):
-        """It should find Products by Category"""
+        """It should Find Products by Category"""
         products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
