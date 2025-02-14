@@ -129,6 +129,9 @@ class Product(db.Model):
         Args:
             data (dict): A dictionary containing the Product data
         """
+        if not isinstance(data, dict):
+            raise DataValidationError("Invalid product: body of request contained bad or no data")
+    
         try:
             self.id = data.get("id", None) 
             self.name = data["name"]
