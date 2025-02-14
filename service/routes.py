@@ -141,7 +141,7 @@ def update_products(product_id):
 
     product.deserialize(request.get_json())
     product.id = product_id
-    prodouct.update()
+    product.update()
     return product.serialize(), status.HTTP_200_OK
 
 ######################################################################
