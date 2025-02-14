@@ -199,7 +199,7 @@ class TestProductModel(unittest.TestCase):
 
     # TEST-CASE: DESERIALIZE PRODUCT
     def test_deserialize_product(self):
-    """It should Deserialize a Product from a dictionary"""
+        """It should Deserialize a Product from a dictionary"""
         # Define the input dictionary
         data = {
             "id": 1,
