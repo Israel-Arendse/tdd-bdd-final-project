@@ -224,6 +224,20 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(product.available, True)
         self.assertEqual(product.category, Category.CLOTHS)  # Enum converted back from string
 
+    # TEST-CASE: DESERIALIZE PRODUCT WITH MISSING FIELD
+    def test_deserialize_product_with_missing_field(self):
+        """It should raise DataValidationError when a required field is missing"""
+        data = {
+            "description": "A red hat",
+            "price": "12.5",
+            "available": True,
+            "category": "CLOTHS"
+        }
+        product = Product()
+        with self.assertRaises(DataValidationError) as context:
+            product.deserialize(data)
+        self.assertIn("missing name", str(context.exception))
+
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
         """It should Find a Product by Name"""
