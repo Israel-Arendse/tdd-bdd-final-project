@@ -146,7 +146,6 @@ class TestProductModel(unittest.TestCase):
         with self.assertRaises(DataValidationError):
             product.update()
 
-
     # TEST-CASE: DELETE A PRODUCT
     def test_delete_a_product(self):
         """It should Delete a Product"""
@@ -180,10 +179,10 @@ class TestProductModel(unittest.TestCase):
             available=True,
             category=Category.CLOTHS
             )
-    
+
         # Call the serialize method
         result = product.serialize()
-        
+
         # Define the expected dictionary
         expected = {
             "id": 1,
@@ -193,7 +192,7 @@ class TestProductModel(unittest.TestCase):
             "available": True,
             "category": "CLOTHS"  # Enum converted to string
         }
-        
+
         # Verify the output matches the expected dictionary
         self.assertEqual(result, expected)
 
