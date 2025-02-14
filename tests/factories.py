@@ -59,4 +59,4 @@ class ProductFactory(factory.Factory):
             Category.AUTOMOTIVE,
             Category.TOOLS,
         ]
-)
+    )
