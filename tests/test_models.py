@@ -253,6 +253,21 @@ class TestProductModel(unittest.TestCase):
             product.deserialize(data)
         self.assertIn("Invalid type for boolean [available]", str(context.exception))
 
+    # TEST-CASE: DESERIALIZE PRODUCT WITH INVALID CATEGORY
+    def test_deserialize_product_with_invalid_category(self):
+        """It should raise DataValidationError for invalid category"""
+        data = {
+            "name": "Fedora",
+            "description": "A red hat",
+            "price": "12.5",
+            "available": True,
+            "category": "INVALID_CATEGORY"  # Invalid enum value
+        }
+        product = Product()
+        with self.assertRaises(DataValidationError) as context:
+            product.deserialize(data)
+        self.assertIn("Invalid attribute", str(context.exception))
+
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
         """It should Find a Product by Name"""
