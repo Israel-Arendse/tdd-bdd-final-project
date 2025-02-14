@@ -200,29 +200,29 @@ class TestProductModel(unittest.TestCase):
     # TEST-CASE: DESERIALIZE PRODUCT
     def test_deserialize_product(self):
     """It should Deserialize a Product from a dictionary"""
-    # Define the input dictionary
-    data = {
-        "id": 1,
-        "name": "Fedora",
-        "description": "A red hat",
-        "price": "12.5",  # Ensure price is a string
-        "available": True,
-        "category": "CLOTHS"  # Enum as string
-    }
+        # Define the input dictionary
+        data = {
+            "id": 1,
+            "name": "Fedora",
+            "description": "A red hat",
+            "price": "12.5",  # Ensure price is a string
+            "available": True,
+            "category": "CLOTHS"  # Enum as string
+        }
 
-    # Create an empty product object
-    product = Product()
+        # Create an empty product object
+        product = Product()
 
-    # Call the deserialize method
-    product.deserialize(data)
+        # Call the deserialize method
+        product.deserialize(data)
 
-    # Verify the product attributes match the input dictionary
-    self.assertEqual(product.id, 1)
-    self.assertEqual(product.name, "Fedora")
-    self.assertEqual(product.description, "A red hat")
-    self.assertEqual(product.price, Decimal("12.5"))  # Ensure price is converted to Decimal
-    self.assertEqual(product.available, True)
-    self.assertEqual(product.category, Category.CLOTHS)  # Enum converted back from string
+        # Verify the product attributes match the input dictionary
+        self.assertEqual(product.id, 1)
+        self.assertEqual(product.name, "Fedora")
+        self.assertEqual(product.description, "A red hat")
+        self.assertEqual(product.price, Decimal("12.5"))  # Ensure price is converted to Decimal
+        self.assertEqual(product.available, True)
+        self.assertEqual(product.category, Category.CLOTHS)  # Enum converted back from string
 
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
