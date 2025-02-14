@@ -178,7 +178,7 @@ class TestProductModel(unittest.TestCase):
         products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
-        available = products.[0].available
+        available = products[0].available
         count = len([product for product in products if product.available == available])
         found = Product.test_find_by_availability(available)
         self.assertEqual(found.count(), count)
