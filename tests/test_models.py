@@ -268,6 +268,25 @@ class TestProductModel(unittest.TestCase):
             product.deserialize(data)
         self.assertIn("Invalid attribute", str(context.exception))
 
+    # TEST-CASE: DESERIALIZE PRODUCT WITH BAD OR NO DATA
+    def test_deserialize_product_with_bad_or_no_data(self):
+        """It should raise DataValidationError when data is bad or missing"""
+        # Test with None
+        product = Product()
+        with self.assertRaises(DataValidationError) as context:
+            product.deserialize(None)
+        self.assertIn("Invalid product: body of request contained bad or no data", str(context.exception))
+
+        # Test with an empty dictionary
+        with self.assertRaises(DataValidationError) as context:
+            product.deserialize({})
+        self.assertIn("Invalid product: missing name", str(context.exception))
+
+        # Test with incorrect data type
+        with self.assertRaises(DataValidationError) as context:
+            product.deserialize("This is not a dictionary")
+        self.assertIn("Invalid product: body of request contained bad or no data", str(context.exception))
+
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
         """It should Find a Product by Name"""
