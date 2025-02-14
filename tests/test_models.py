@@ -238,6 +238,21 @@ class TestProductModel(unittest.TestCase):
             product.deserialize(data)
         self.assertIn("missing name", str(context.exception))
 
+    # TEST-CASE: DESERIALIZE PRODUCT WITH INVALID BOOLEAN
+    def test_deserialize_product_with_invalid_boolean(self):
+        """It should raise DataValidationError for invalid boolean type"""
+        data = {
+            "name": "Fedora",
+            "description": "A red hat",
+            "price": "12.5",
+            "available": "yes",  # Invalid type for boolean
+            "category": "CLOTHS"
+        }
+        product = Product()
+        with self.assertRaises(DataValidationError) as context:
+            product.deserialize(data)
+        self.assertIn("Invalid type for boolean [available]", str(context.exception))
+
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
         """It should Find a Product by Name"""
