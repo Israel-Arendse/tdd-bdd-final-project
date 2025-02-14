@@ -169,7 +169,34 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(len(products), 5)
 
     # TEST CASE: SERIALIZE A PRODUCT
+    def test_serialize_product(self):
+    """It should serialize a Product into a dictionary"""
+    # Create a product with known attributes
+    product = Product(
+        id=1,
+        name="Fedora",
+        description="A red hat",
+        price=12.50,
+        available=True,
+        category=Category.CLOTHS
+    )
     
+    # Call the serialize method
+    result = product.serialize()
+    
+    # Define the expected dictionary
+    expected = {
+        "id": 1,
+        "name": "Fedora",
+        "description": "A red hat",
+        "price": "12.50",  # Ensure price is serialized to string
+        "available": True,
+        "category": "CLOTHS"  # Enum converted to string
+    }
+    
+    # Verify the output matches the expected dictionary
+    self.assertEqual(result, expected)
+
 
     # TEST-CASE: FIND BY NAME
     def test_find_by_name(self):
