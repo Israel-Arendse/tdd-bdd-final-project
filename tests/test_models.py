@@ -187,6 +187,7 @@ class TestProductModel(unittest.TestCase):
 
     # TEST CASE: FIND BY CATEGORY
     def test_find_by_category(self):
+        """It should find Products by Category"""
         products = ProductFactory.create_batch(10)
         for product in products:
             product.create()
