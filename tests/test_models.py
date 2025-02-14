@@ -139,7 +139,7 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(products[0].description, "testing")
 
     # TEST-CASE: UPDATE A PRODUCT WITH NO ID
-    def test_update_a_product_with_no_id(self)
+    def test_update_a_product_with_no_id(self):
         """It should raise DataValidationError when id is None"""
         product = ProductFactory()
         product.id = None
