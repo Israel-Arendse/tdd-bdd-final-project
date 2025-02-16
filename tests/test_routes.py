@@ -210,7 +210,7 @@ class TestProductRoutes(TestCase):
         response = self.client.get(BASE_URL)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         data = response.get_json()
-        self.assertEqual(len(data) 5)
+        self.assertEqual(len(data), 5)
 
     ######################################################################
     # Utility functions
