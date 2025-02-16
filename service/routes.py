@@ -94,13 +94,14 @@ def create_products():
 # GET PRODUCT COUNT
 ######################################################################
 
-@app.route('/products/count', methods=['GET'])
+@app.route('/products', methods=['GET'])
 def get_product_count():
     """
     Get the count of products
     """
-    count = Product.query.count()
-    return jsonify(count=count), status.HTTP_200_OK
+    products = Product.query.all()
+    result = [product.serialize() for product in products]
+    return jsonify(result), status.HTTP_200_OK
 
 ######################################################################
 # L I S T   A L L   P R O D U C T S
