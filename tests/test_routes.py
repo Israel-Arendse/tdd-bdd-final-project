@@ -195,14 +195,13 @@ class TestProductRoutes(TestCase):
         # create a list of 5 products
         products = self._create_products(5)
         # retrieve the intial count of poducts before deletion
-        roduct_count = self.get_product_count(()        # assign the first product to the test_prdouct variable
+        product_count = self.get_product_count()        # assign the first product to the test_prdouct variable
         test_product = products[0]
         # send a delete request to the BASE_URL with test_product.id
         response = self.client.delete(f"{BASE_URL}/{test_product.id}")
         # assert that the status code is HTTP 204 NO RESPONSE
         self.assertEqual(result.status_code, status.HTTP_204_NO_CONTENT)
-        s check if the reresponse data is empty
-        self.assertEqual(len(response.data), 0)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)        self.assertEqual(len(response.data), 0)
         # send a request to the same endpoint to retrieve the deleted product
         response = self.client.get(f"{BASE_URL}/{test_product.id}")
         # assert that the status code is HTTP 404 NOT FOUND
