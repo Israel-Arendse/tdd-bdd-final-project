@@ -195,7 +195,7 @@ class TestProductRoutes(TestCase):
         # create a list of 5 products
         products = self._create_products(5)
         # retrieve the intial count of poducts before deletion
-        product_count = self.get_product_count()
+        roduct_count = self.get_product_count()
         # assign the first product to the test_prdouct variable
         test_product = products[0]
         # send a delete request to the BASE_URL with test_product.id
@@ -209,7 +209,7 @@ class TestProductRoutes(TestCase):
         # assert that the status code is HTTP 404 NOT FOUND
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         # retrieve the count of products after the deletion purpose
-        new_count = self.get_product_count
+        new_count = self.get_product_count()
         # check  if the new count of products is one less than the initial count
         self.assertEqual(new_count, product_count - 1)
 
