@@ -90,18 +90,7 @@ def create_products():
     location_url = url_for("get_products", product_id=product.id, _external=True)
     return jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
 
-######################################################################
-# GET PRODUCT COUNT
-######################################################################
 
-@app.route('/products', methods=['GET'])
-def get_product_count():
-    """
-    Get the count of products
-    """
-    products = Product.query.all()
-    result = [product.serialize() for product in products]
-    return jsonify(result), status.HTTP_200_OK
 
 ######################################################################
 # L I S T   A L L   P R O D U C T S
