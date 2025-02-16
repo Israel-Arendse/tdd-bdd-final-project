@@ -201,7 +201,7 @@ class TestProductRoutes(TestCase):
         response = self.client.delete(f"{BASE_URL}/{test_product.id}")
         # assert that the status code is HTTP 204 NO RESPONSE
         self.assertEqual(result.status_code, status.HTTP_204_NO_CONTENT)
-        # check if the reresponse data is empty
+        s check if the reresponse data is empty
         self.assertEqual(len(response.data), 0)
         # send a request to the same endpoint to retrieve the deleted product
         response = self.client.get(f"{BASE_URL}/{test_product.id}")
