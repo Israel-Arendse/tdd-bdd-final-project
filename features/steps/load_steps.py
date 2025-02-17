@@ -55,4 +55,4 @@ def step_impl(context):
             "category": row['category']
         }
         response = requests.post(rest_endpoint, json=payload)
-        assert response.status_code == HTTP_201_CREATED
+        assert context.resp.status_code == HTTP_201_CREATED
