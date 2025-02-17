@@ -118,7 +118,7 @@ def list_products():
         app.logger.info("Find by available: %s", available)
         # create bool from string
         available_value = available.lower() in ["true", "yes", "1"]
-        products = Product.find_by_availability(available_value)avail
+        products = Product.find_by_availability(available_value)
     else:
         app.logger.info("Find all")
         products = Product.all()
