@@ -104,6 +104,7 @@ def list_products():
     # Filter the products by name
     products = []
     name = request.args.get("name")
+    name = request.args.get("category")
 
     # Find products by name
     if name:
