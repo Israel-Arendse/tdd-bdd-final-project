@@ -245,7 +245,7 @@ class TestProductRoutes(TestCase):
         self.assertEqual(len(data), found_count)
         # check the data just to be sure
         for product in data:
-            self.assertEqual(product["category"], category.)
+            self.assertEqual(product["category"], category.name)
 
     ######################################################################
     # Utility functions
