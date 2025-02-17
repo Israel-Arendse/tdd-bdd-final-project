@@ -217,7 +217,7 @@ class TestProductRoutes(TestCase):
     def test_get_product_not_found(self):
         """It should not Get a Product that is not found"""
         response = self.client.get(f"{BASE_URL}/0")
-        self.assertEqual(result.status_code, status.HTTP_404_NOT_FOUND)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         data = response.get_json()
         self.assertIn("was not found", data["message"])
 
