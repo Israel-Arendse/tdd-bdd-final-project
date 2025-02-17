@@ -101,7 +101,18 @@ def list_products():
     """Returns a list of Products"""
     app.logger.info("Request to list Products...")
 
-    products = Product.all()
+    # Filter the products by name
+    products = []
+    name = request.args.get("name")
+
+    # If finding products by name
+    # Else find all products
+    if name:
+        app.logger.info("Find by name: %s", name)
+        products = Product.find_by_name(name)
+    else:
+        app.logger.info("Find all")
+        products = Product.all()
 
     results = [product.serialize() for product in products]
     app.logger.info("[%s] Products returned", len(results))
