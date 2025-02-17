@@ -75,3 +75,19 @@ Scenario: Update a Product
     Then I should see the message "Success"
     And I should see "Fedora" in the results
     And I should not see "Hat" in the results
+
+Scenario: Delete a Product
+    When I vist the "Home Page"
+    And I set the "Name" to "Sheets"
+    and I press the "Search" button
+    Then I should see the message "Success"
+    And I should see "Full bed sheets" in  the "Description" field
+    When I copy the "Id" field
+    And I press the "Clear" button
+    And I paste the "Id" field
+    And I press the "Delete" button
+    Then I should see the message "Product has been deleted"
+    When I press the "Clear" button
+    And I press the "Search" button
+    Then I should see the message "Success"
+    And I should not see "Sheets" in the results
