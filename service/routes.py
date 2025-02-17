@@ -86,15 +86,13 @@ def create_products():
 
     message = product.serialize()
 
-    
     location_url = url_for("get_products", product_id=product.id, _external=True)
     return jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
-
-
 
 ######################################################################
 # L I S T  P R O D U C T S
 ######################################################################
+
 
 @app.route("/products", methods=["GET"])
 def list_products():
@@ -133,6 +131,8 @@ def list_products():
 
 #
 # PLACE YOUR CODE HERE TO READ A PRODUCT
+
+
 @app.route("/products/<int:product_id>")
 def get_products(product_id):
     """
@@ -184,7 +184,7 @@ def delete_products(product_id):
     This endpoint will delete a Product based on the id specfied in the path
     """
     app.logger.info("Request to Delete a product with id [%s]", product_id)
-    
+
     # Retrieve the product by product_id
     product = Product.find(product_id)
     # Delete the product if found
