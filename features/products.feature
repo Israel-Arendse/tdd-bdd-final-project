@@ -81,7 +81,7 @@ Scenario: Delete a Product
     And I set the "Name" to "Sheets"
     And I press the "Search" button
     Then I should see the message "Success"
-    And I should see "A red fedora" in  the "Description" field
+    And I should see "A red fedora" in the "Description" field
     When I copy the "Id" field
     And I press the "Clear" button
     And I paste the "Id" field
