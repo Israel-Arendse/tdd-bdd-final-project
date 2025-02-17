@@ -221,7 +221,7 @@ class TestProductRoutes(TestCase):
             [products for product in products if product.name == test_name]
         )
         response = self.client.get(
-            BASE_URL, query_string=f"name={quote_plus{test_name}}"
+            BASE_URL, query_string=f"name={quote_plus(test_name)}"
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         data = response.get_json()
