@@ -42,7 +42,7 @@ Scenario: Create a Product
 Scenario: Read a Product
     When I vist the "Home Page"
     And I set the "Name" to "Hat"
-    And I click the "Search" button
+    And I press the "Search" button
     Then I should see the message "Success"
     When I copy the "Id" field
     And I press the "Clear" button
@@ -58,7 +58,7 @@ Scenario: Read a Product
 Scenario: Update a Product
     When I visit the "Home Page"
     And I set the "Name" to "Hat"
-    And I click the "Search" button
+    And I pr the "Search" button
     Then I should see the message "Success"
     And I should see "A red fedora" in the "Description" field
     When I press the "Name" to "Fedora"
