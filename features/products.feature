@@ -113,7 +113,7 @@ Scenario: Search by category
     And I should not see "Sheets" in the resuts
     And I should not see "Hat" in the results
 
-Scenario: Search by availability:
+Scenario: Search by available:
     When I vist the "Home Page"
     And I press the "Clear" button
     And I select "True" in the "Available" dropdown
