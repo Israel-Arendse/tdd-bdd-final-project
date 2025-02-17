@@ -240,7 +240,7 @@ class TestProductRoutes(TestCase):
 
         # test for available
         response = self.client.get(BASE_URL, query_string=f"category={category.name}")
-        self.assertEqual(respone.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
         data = response.get_json()
         self.assertEqual(len(data), found_count)
         # check the data just to be sure
