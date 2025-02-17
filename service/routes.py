@@ -122,7 +122,7 @@ def list_products():
     else:
         app.logger.info("Find all")
         products = Product.all()
-        
+
     results = [product.serialize() for product in products]
     app.logger.info("[%s] Products returned", len(results))
     return results, status.HTTP_200_OK
