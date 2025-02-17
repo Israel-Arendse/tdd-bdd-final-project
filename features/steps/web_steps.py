@@ -106,35 +106,118 @@ def step_impl(context, element_name):
 
 ## UPDATE CODE HERE ##
 
-@when('I press the "{button}" button')
-def step_impl(context, button):
-    button_id = button.lower() + '-btn'
-    context.driver.find_element_by_id(button_id).click()
+@when(u'I press the "Create" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Create" button')
+	
+	
+@then(u'I should see the message "Success"')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see the message "Success"')
+	
+	
+@when(u'I press the "Clear" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Clear" button')
+	
+	
+@when(u'I press the "Retrieve" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Retrieve" button')
+	
+	
+@when(u'I vist the "Home Page"')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I vist the "Home Page"')
+	
+	
+when(u'I click the "Search" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I click the "Search" button')
+	
+	
+@when(u'I press the "Name" to "Fedora"')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Name" to "Fedora"')
+	
 
-@then('I should see "{name}" in the results')
-def step_impl(context, name):
-    found = WebDriverWait(context.driver, context.wait_seconds).until(
-        expected_conditions.text_to_be_present_in_element(
-            (By.ID, 'search_results'),
-            name
-        )
-    )
-    assert(found)
+@when(u'I press the "Update" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Update" button')
+	
+	
+@when(u'I press the "Search" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Search" button')
+	
+	
+@then(u'I should see "Fedora" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see "Fedora" in the results')
+	
+	
+@then(u'I should not see "Hat" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should not see "Hat" in the results')
+	
+	
+@then(u'I should see "Full bed sheets" in  the "Description" field')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see "Full bed sheets" in  the "Description" field')
+	
+	
+@when(u'I press the "Delete" button')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I press the "Delete" button')
+	
+	
+@then(u'I should see the message "Product has been deleted"')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see the message "Product has been deleted"')
+	
+	
+@then(u'I should not see "Sheets" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should not see "Sheets" in the results')
+	
+	
+@then(u'I should see "Hat" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see "Hat" in the results')
+	
+	
+@then(u'I should see "Shoes" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see "Shoes" in the results')
+	
+	
+@then(u'I should see "Big Mac" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see "Big Mac" in the results')
+	
+	
+@then(u'I should see "Sheets" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should see "Sheets" in the results')
+	
+	
+@when(u'I select the "Food" category')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: When I select the "Food" category')
+	
+	
+@then(u'I should not see "Shoes" in the results')
+def step_impl(context):
+	raise NotImplementedError(u'STEP: Then I should not see "Shoes" in the results')
+	
+	
+@then(u'I should not see "Sheets" in the resuts')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: Then I should not see "Sheets" in the results')
 
-@then('I should not see "{name}" in the results')
-def step_impl(context, name):
-    element = context.driver.find_element_by_id('search_results')
-    assert(name not in element.text)
-
-@then('I should see the message "{message}"')
-def step_impl(context, message):
-    found = WebDriverWait(context.driver, context.wait_seconds).until(
-        expected_conditions.text_to_be_present_in_element(
-            (By.ID, 'flash_message'),
-            message
-        )
-    )
-    assert(found)
+@when(u'I click the "Search" button')
+def step_impl(context):
+    raise NotImplementedError(u'STEP: When I click the "Search" button')
 
 ##################################################################
 # This code works because of the following naming convention:
