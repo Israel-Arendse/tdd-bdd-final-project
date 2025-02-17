@@ -40,7 +40,7 @@ Scenario: Create a Product
     And I should see "34.95" in the "Price" field
 
 Scenario: Read a Product
-    When I vist the "Home Page"
+    When I visit the "Home Page"
     And I set the "Name" to "Hat"
     And I press the "Search" button
     Then I should see the message "Success"
@@ -61,7 +61,7 @@ Scenario: Update a Product
     And I press the "Search" button
     Then I should see the message "Success"
     And I should see "A red fedora" in the "Description" field
-    When I press the "Name" to "Fedora"
+    When I set the "Name" to "Fedora"
     And I press the "Update" button
     Then I should see the message "Success"
     When I copy the "Id" field
@@ -77,9 +77,9 @@ Scenario: Update a Product
     And I should not see "Hat" in the results
 
 Scenario: Delete a Product
-    When I vist the "Home Page"
+    When I visit the "Home Page"
     And I set the "Name" to "Sheets"
-    and I press the "Search" button
+    And I press the "Search" button
     Then I should see the message "Success"
     And I should see "Full bed sheets" in  the "Description" field
     When I copy the "Id" field
@@ -103,18 +103,18 @@ Scenario: List all products
     And I should see "Sheets" in the results
 
 Scenario: Search by category
-    When I vist the "Home Page"
+    When I visit the "Home Page"
     And I press the "Clear" button
     And I select the "Food" category
     And I press the "Search" button
     Then I should see the message "Success"
     And I should see "Big Mac" in the results
     And I should not see "Shoes" in the results
-    And I should not see "Sheets" in the resuts
+    And I should not see "Sheets" in the results
     And I should not see "Hat" in the results
 
 Scenario: Search by available:
-    When I vist the "Home Page"
+    When I visit the "Home Page"
     And I press the "Clear" button
     And I select "True" in the "Available" dropdown
     And I press the "Search" button
